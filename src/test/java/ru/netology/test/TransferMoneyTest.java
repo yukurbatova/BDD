@@ -19,7 +19,7 @@ public class TransferMoneyTest {
     @Test
     void shouldTransferMoneyToFirstCard() {
         var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = LoginPage.validLogin(authInfo);
+        var verificationPage = loginPage.validLogin(authInfo);
         var verifyInfo = DataHelper.getVerificationCodeFor(authInfo);
         var dashBoardPage = verificationPage.validVerify(verifyInfo);
         int firstBalance = dashBoardPage.getFirstCardBalance();
@@ -35,7 +35,7 @@ public class TransferMoneyTest {
     @Test
     void shouldTransferMoneyToSecondCard() {
         var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = LoginPage.validLogin(authInfo);
+        var verificationPage = loginPage.validLogin(authInfo);
         var verifyInfo = DataHelper.getVerificationCodeFor(authInfo);
         var dashBoardPage = verificationPage.validVerify(verifyInfo);
         int firstBalance = dashBoardPage.getFirstCardBalance();
@@ -51,7 +51,7 @@ public class TransferMoneyTest {
     @Test
     void shouldTransferMoneyFromInvalidCard() {
         var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = LoginPage.validLogin(authInfo);
+        var verificationPage = loginPage.validLogin(authInfo);
         var verifyInfo = DataHelper.getVerificationCodeFor(authInfo);
         var dashBoardPage = verificationPage.validVerify(verifyInfo);
         int firstBalance = dashBoardPage.getFirstCardBalance();
@@ -66,7 +66,7 @@ public class TransferMoneyTest {
     @Test
     void shouldTransferMoneyIfSumMoreBalance() {
         var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = LoginPage.validLogin(authInfo);
+        var verificationPage = loginPage.validLogin(authInfo);
         var verifyInfo = DataHelper.getVerificationCodeFor(authInfo);
         var dashBoardPage = verificationPage.validVerify(verifyInfo);
         int firstBalance = dashBoardPage.getFirstCardBalance();
